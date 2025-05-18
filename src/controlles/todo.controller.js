@@ -37,7 +37,7 @@ const todoController = {
                 return "data not found"
             }
             let data = await todoModel.create(body);
-           return res.status(200).send({message:"create todo success" ,data})
+           return res.status(201).send({message:"create todo success" ,data})
         } catch (error) {
             return res.status(500).send({message:error.message})
         }

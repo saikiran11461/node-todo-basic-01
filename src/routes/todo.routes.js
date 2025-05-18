@@ -7,8 +7,8 @@ const todoRouter = express.Router();
 
 todoRouter.get("/", todoController.getTodos);
 todoRouter.get("/:id", todoController.getSingleTodos);
-todoRouter.post("/create",todoValidator, validateRequest, todoController.createTodos);
-todoRouter.patch("/:id",todoController.patchTodos);
+todoRouter.post("/",todoValidator, validateRequest, todoController.createTodos);
+todoRouter.patch("/:id", todoValidator, validateRequest,todoController.patchTodos);
 todoRouter.delete("/:id",todoController.deleteTodos)
 
 

@@ -2,12 +2,13 @@ const express = require('express');
 const cors = require("cors");
 const todoRouter = require("./src/routes/todo.routes");
 const Connection = require('./src/config/db');
+const {errorHandler} = require("./src/middlewares/errorHandler")
 require("dotenv").config()
 const app = express();
 
 app.use(express.json());
 app.use(cors())
-
+app.use(errorHandler)
 
 app.use("/todo", todoRouter)
 
